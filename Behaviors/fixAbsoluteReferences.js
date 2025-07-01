@@ -2,7 +2,7 @@ class MyBehavior
 {
   // required: an id for this behavior, will be displayed in the logs
   // when the behavior is run.
-  static id = "My Behavior Id";
+  static id = "Fix Absolute References";
 
   // required: a function that checks if a behavior should be run
   // for a given page.
