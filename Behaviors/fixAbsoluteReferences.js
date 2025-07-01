@@ -13,6 +13,11 @@ class FixAbsoluteReferences
     return window.location.href.toLowerCase().startsWith("https://guilfordcountync.prod.govaccess.org");
   }
 
+  static init () {
+    // This method is called when the behavior is initialized. It's required (although not documented.)
+    // You can use it to set up any global state or configuration.
+  }
+
   // optional: if true, will also check isMatch() and possibly run
   // this behavior in each iframe.
   // if false, or not defined, this behavior will be skipped for iframes.
