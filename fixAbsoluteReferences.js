@@ -77,7 +77,8 @@ class MyBehavior
     ];
 
     for (const [selector, attr] of selectors) {
-      document.querySelectorAll(`${selector}[${attr}]`).forEach(el => {
+      const elements = document.querySelectorAll(`${selector}[${attr}]`);
+      for (const el of elements) {
         const oldVal = el.getAttribute(attr);
         const newVal = fixUrl(oldVal);
         if (oldVal !== newVal) {
@@ -85,7 +86,7 @@ class MyBehavior
           el.setAttribute(attr, newVal);
           yield ctx.getState(`Fixed ${attr} in ${selector} element: ${oldVal} -> ${newVal}`);
         }
-      });
+      }
     }
 
     //... yield ctx.getState("a step has been performed");
