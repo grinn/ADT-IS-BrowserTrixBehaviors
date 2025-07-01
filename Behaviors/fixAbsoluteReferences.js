@@ -37,12 +37,12 @@ class FixAbsoluteReferences
   // When the iterator finishes, the behavior is done.
   // (See below for more info)
   async* run(ctx) {
-    //... yield ctx.getState("starting behavior");
+    //... yield ctx.log("starting behavior");
 
     // Add NCGUILCO_subscribe_overlay=1 to local storage to hide the popover
     localStorage.setItem("NCGUILCO_subscribe_overlay", "1");
 
-    yield ctx.getState("Set overlay bit.");
+    yield ctx.log("Set overlay bit.");
 
     
     // Hotfix: Replace old domain references in common elements
@@ -88,12 +88,12 @@ class FixAbsoluteReferences
         if (oldVal !== newVal) {
           // Update the attribute with the new value
           el.setAttribute(attr, newVal);
-          yield ctx.getState(`Fixed ${attr} in ${selector} element: ${oldVal}`);
+          yield ctx.log(`Fixed ${attr} in ${selector} element: ${oldVal}`);
         }
       }
     }
 
-    //... yield ctx.getState("a step has been performed");
+    //... yield ctx.log("a step has been performed");
   }
 
 
