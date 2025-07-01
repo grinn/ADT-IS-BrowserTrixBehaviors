@@ -14,8 +14,7 @@ class FixAbsoluteReferences
   }
 
   static init () {
-    // This method is called when the behavior is initialized. It's required (although not documented.)
-    // You can use it to set up any global state or configuration.
+    return { state: {} };
   }
 
   // optional: if true, will also check isMatch() and possibly run
