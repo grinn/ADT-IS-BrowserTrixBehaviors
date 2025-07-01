@@ -83,6 +83,8 @@ class MyBehavior
       });
     }
 
+    console.log("Fixed absolute references in common elements.");
+
     //... yield ctx.getState("a step has been performed");
   }
 
