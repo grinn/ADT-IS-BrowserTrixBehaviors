@@ -38,6 +38,9 @@ class MyBehavior
     // Add NCGUILCO_subscribe_overlay=1 to local storage to hide the popover
     localStorage.setItem("NCGUILCO_subscribe_overlay", "1");
 
+    yield ctx.getState("Set overlay bit.");
+
+    
     // Hotfix: Replace old domain references in common elements
     const oldDomains = [
       "www.guilfordcountync.gov",
@@ -83,7 +86,7 @@ class MyBehavior
       });
     }
 
-    console.log("Fixed absolute references in common elements.");
+    yield ctx.getState("Fixed absolute references in common elements.");
 
     //... yield ctx.getState("a step has been performed");
   }
