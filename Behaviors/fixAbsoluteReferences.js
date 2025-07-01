@@ -1,4 +1,4 @@
-class MyBehavior
+class FixAbsoluteReferences
 {
   // required: an id for this behavior, will be displayed in the logs
   // when the behavior is run.
@@ -16,7 +16,7 @@ class MyBehavior
   // optional: if true, will also check isMatch() and possibly run
   // this behavior in each iframe.
   // if false, or not defined, this behavior will be skipped for iframes.
-  static runInIframes = false;
+  // static runInIframes = false;
 
   // optional: if defined, provides a way to define a custom way to determine
   // when a page has finished loading beyond the standard 'load' event.
@@ -24,9 +24,9 @@ class MyBehavior
   // if defined, the crawler will await 'awaitPageLoad()' before moving on to
   // post-crawl processing operations, including link extraction, screenshots,
   // and running main behavior
-  async awaitPageLoad() {
+  /* async awaitPageLoad() {
 
-  }
+  } */
 
   // required: the main behavior async iterator, which should yield for
   // each 'step' in the behavior.
