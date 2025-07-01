@@ -84,7 +84,7 @@ class MyBehavior
         if (oldVal !== newVal) {
           // Update the attribute with the new value
           el.setAttribute(attr, newVal);
-          yield ctx.getState(`Fixed ${attr} in ${selector} element: ${oldVal} -> ${newVal}`);
+          yield ctx.getState(`Fixed ${attr} in ${selector} element: ${oldVal}`);
         }
       }
     }
