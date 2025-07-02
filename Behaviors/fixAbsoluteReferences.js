@@ -80,7 +80,10 @@ class FixAbsoluteReferences
       ["form", "action"]
     ];
 
+    ctx.log(`Fixing absolute references in ${selectors.length} selectors...`);
+    
     for (const [selector, attr] of selectors) {
+      ctx.log(`Processing selector: ${selector}, attribute: ${attr}, matching elements: ${document.querySelectorAll(selector).length}`);
       for (const el of document.querySelectorAll(`${selector}[${attr}]`)) {
         const oldVal = el.getAttribute(attr);
         const newVal = fixUrl(oldVal);
