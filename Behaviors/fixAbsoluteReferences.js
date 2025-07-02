@@ -42,7 +42,8 @@ class FixAbsoluteReferences
     // Add NCGUILCO_subscribe_overlay=1 to local storage to hide the popover
     localStorage.setItem("NCGUILCO_subscribe_overlay", "1");
 
-    ctx.log("Set overlay bit.");
+    ctx.log("Set overlay bit 1225.");
+    ctx.log("Do another thing.");
 
     
     // Hotfix: Replace old domain references in common elements
