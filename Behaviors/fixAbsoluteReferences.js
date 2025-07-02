@@ -42,7 +42,7 @@ class FixAbsoluteReferences
     // Add NCGUILCO_subscribe_overlay=1 to local storage to hide the popover
     localStorage.setItem("NCGUILCO_subscribe_overlay", "1");
 
-    yield ctx.log("Set overlay bit.");
+    ctx.log("Set overlay bit.");
 
     
     // Hotfix: Replace old domain references in common elements
@@ -81,13 +81,13 @@ class FixAbsoluteReferences
     ];
 
     for (const [selector, attr] of selectors) {
-      for await (const el of document.querySelectorAll(`${selector}[${attr}]`)) {
+      for (const el of document.querySelectorAll(`${selector}[${attr}]`)) {
         const oldVal = el.getAttribute(attr);
         const newVal = fixUrl(oldVal);
         if (oldVal !== newVal) {
           // Update the attribute with the new value
           el.setAttribute(attr, newVal);
-          yield ctx.log(`Fixed ${attr} in ${selector} element: ${oldVal}`);
+          ctx.log(`Fixed ${attr} in ${selector} element: ${oldVal}`);
         }
       }
     }
