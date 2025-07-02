@@ -81,8 +81,7 @@ class FixAbsoluteReferences
     ];
 
     for (const [selector, attr] of selectors) {
-      const elements = document.querySelectorAll(`${selector}[${attr}]`);
-      for (const el of elements) {
+      for await (const el of document.querySelectorAll(`${selector}[${attr}]`)) {
         const oldVal = el.getAttribute(attr);
         const newVal = fixUrl(oldVal);
         if (oldVal !== newVal) {
