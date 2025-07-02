@@ -42,8 +42,8 @@ class FixAbsoluteReferences
     // Add NCGUILCO_subscribe_overlay=1 to local storage to hide the popover
     localStorage.setItem("NCGUILCO_subscribe_overlay", "1");
 
-    ctx.log("Set overlay bit 1225.");
-    ctx.log("Do another thing.");
+    //ctx.log("Set overlay bit 1225.");
+    //ctx.log("Do another thing.");
 
     
     // Hotfix: Replace old domain references in common elements
@@ -81,17 +81,17 @@ class FixAbsoluteReferences
       ["form", "action"]
     ];
 
-    ctx.log(`Fixing absolute references in ${selectors.length} selectors...`);
+    //ctx.log(`Fixing absolute references in ${selectors.length} selectors...`);
     
     for (const [selector, attr] of selectors) {
-      ctx.log(`Processing selector: ${selector}, attribute: ${attr}, matching elements: ${document.querySelectorAll(selector).length}`);
+      //ctx.log(`Processing selector: ${selector}, attribute: ${attr}, matching elements: ${document.querySelectorAll(selector).length}`);
       for (const el of document.querySelectorAll(`${selector}[${attr}]`)) {
         const oldVal = el.getAttribute(attr);
         const newVal = fixUrl(oldVal);
         if (oldVal !== newVal) {
           // Update the attribute with the new value
           el.setAttribute(attr, newVal);
-          ctx.log(`Fixed ${attr} in ${selector} element: ${oldVal}`);
+          //ctx.log(`Fixed ${attr} in ${selector} element: ${oldVal}`);
         }
       }
     }
